@@ -6,7 +6,7 @@ import characters.King;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DemoTest {
+class CharacterTest {
 
     @Test
     void ElfTest() {

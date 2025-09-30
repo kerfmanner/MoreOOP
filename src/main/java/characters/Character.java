@@ -1,5 +1,6 @@
 package characters;
 
+import kickstrategy.KickStrategy;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,12 +9,22 @@ public abstract class Character {
 
     @Setter
     @Getter
-    protected int power;
+    private int power;
     @Getter
-    protected int hp;
+    private int hp;
+    @Getter
+    @Setter
+    private KickStrategy kickStrategy;
+    
+    public Character(int hp, int power, KickStrategy strategy){
+        this.hp = hp;
+        this.power = power;
+        this.kickStrategy = strategy;
+    }
 
-
-    abstract public void kick(Character other);
+    public void kick(Character other){
+        kickStrategy.kick(this, other);
+    }
 
     public boolean isAlive(){
         return  hp != 0;
@@ -37,4 +48,7 @@ public abstract class Character {
         this.hp = this.hp - damage > 0 ? this.hp - damage : 0;
     }
 
+    public String hitMessage(int damage, Character whoIsKicked){
+        return kickStrategy.message(damage, this, whoIsKicked);
+    }
 } 

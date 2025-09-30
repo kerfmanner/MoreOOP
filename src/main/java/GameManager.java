@@ -12,10 +12,16 @@ public class GameManager {
             return;
         }
             if (move % 2 == 0){
+                int start_hp = c2.getHp();
                 c1.kick(c2);
+                int damage = start_hp - c2.getHp();
+                System.out.println(c1.hitMessage(damage, c2));
             }
             else{
+                int start_hp = c1.getHp();
                 c2.kick(c1);
+                int damage = start_hp - c1.getHp();
+                System.out.println(c2.hitMessage(damage, c1));
             }
             move+=1;
         }

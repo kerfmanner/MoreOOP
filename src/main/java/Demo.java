@@ -1,11 +1,10 @@
 import characters.Character;
-import characters.Elf;
 
 
 public class Demo {
     public static void main(String args[]) {
-        Character c1 = new Elf();
-        Character c2 = new Elf();
+        Character c1 = CharacterFactory.createCharacter();
+        Character c2 = CharacterFactory.createCharacter();
         GameManager.fight(c1, c2);
     }
 }

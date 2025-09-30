@@ -1,8 +1,15 @@
 package characters;
-public class King extends VariablePowerCharacter {
+
+import java.util.Random;
+
+import kickstrategy.NobleStrategy;
+
+public class King extends Character {
+
+    final private static Random stats_randomizer = new Random();
 
     public King(){
-        super(5, 15, 5, 15);
+        super(stats_randomizer.nextInt(5, 15 + 1), stats_randomizer.nextInt(5, 15 + 1),  new NobleStrategy());
     }
 
     @Override
