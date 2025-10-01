@@ -11,7 +11,7 @@ public class Hobbit extends Character{
 
     @Override
     public String toString() {
-        return "Hobbit";
+        return "Hobbit{hp="+this.getHp()+", power="+this.getPower()+"}";
     }
     
 }

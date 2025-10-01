@@ -10,6 +10,6 @@ public class Elf extends Character{
 
     @Override
     public String toString() {
-        return "Elf";
+        return "Elf{hp="+this.getHp()+", power="+this.getPower()+"}";
     }
 }

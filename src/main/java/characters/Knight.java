@@ -12,6 +12,6 @@ public class Knight extends Character{
 
     @Override
     public String toString() {
-        return "Knight";
+        return "Knight{hp="+this.getHp()+", power="+this.getPower()+"}";
     }
 }
